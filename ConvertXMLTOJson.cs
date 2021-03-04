@@ -76,11 +76,11 @@ namespace FunctionApp
                     {
                         returnvalue = true;
                     }
-
                 }
             }
             return returnvalue;
         }
+        
         public static void ConvertJson(JToken json, string path ,JToken refjson, JToken convertedjson1)
         {
 
@@ -103,9 +103,7 @@ namespace FunctionApp
                 {
                     ConvertjsonObjecttoArray(convertedjson1, path);
                 }
-
             }
-
         }
 
         public static bool ConvertjsonObjecttoArray(JToken toConvert, string jsonPath, bool retunsome = false)
@@ -123,7 +121,6 @@ namespace FunctionApp
                     {
                        ConvertjsonObjecttoArray(child, string.Join(".", jsonPathNodes.Skip(i)), returnvalue);                     
                     }
-
                 }
                 else if (relative is JObject)
                 {
@@ -139,9 +136,7 @@ namespace FunctionApp
                     else
                     {
                         relative = type;
-                    }
-                   
-
+                    } 
                 }
             }
             return returnvalue;
